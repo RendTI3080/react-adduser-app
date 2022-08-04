@@ -1,16 +1,14 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 import style from "./AddUser.module.css";
 
 
-
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
     const [error, setError] = useState();
-
 
 
     const addUserHandler = (event) => {
@@ -47,7 +45,7 @@ const AddUser = (props) => {
     };
 
     return (
-        <div>
+        <React.Fragment>
             {error && (
                 <ErrorModal
                     title={error.title}
@@ -74,7 +72,7 @@ const AddUser = (props) => {
                     <Button type="submit">Add User</Button>
                 </form>
             </Card>
-        </div>
+        </React.Fragment>
     );
 };
 
